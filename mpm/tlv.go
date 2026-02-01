@@ -1,4 +1,4 @@
-package go_qris
+package mpm
 
 import (
 	"fmt"
@@ -22,6 +22,13 @@ func (t *TLV) TLV() string {
 	}
 	length := fmt.Sprintf("%02d", len(t.Value))
 	return t.Tag.String() + length + t.Value
+}
+
+func (t *TLV) GetValue() string {
+	if t == nil {
+		return ""
+	}
+	return t.Value
 }
 
 func (t *TLV) Valid() bool {

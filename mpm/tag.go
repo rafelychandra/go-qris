@@ -1,4 +1,4 @@
-package go_qris
+package mpm
 
 import (
 	"strconv"

@@ -1,4 +1,6 @@
-package go_qris
+package mpm
+
+import "fmt"
 
 type POI string
 
@@ -10,4 +12,13 @@ const (
 var ListPOIMethod = []POI{
 	PointOfInitiationMethodStatic,
 	PointOfInitiationMethodDynamic,
+}
+
+func (p POI) Validate() error {
+	for _, v := range ListPOIMethod {
+		if v == p {
+			return nil
+		}
+	}
+	return fmt.Errorf("point of initiation method")
 }
