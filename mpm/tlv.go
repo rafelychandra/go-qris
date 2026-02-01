@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"go-qris/crc16"
+	"github.com/rafelychandra/go-qris/crc16"
 )
 
 type (

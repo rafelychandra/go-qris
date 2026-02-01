@@ -2,10 +2,11 @@ package mpm
 
 import (
 	"fmt"
-	"go-qris/crc16"
 	"reflect"
 	"strconv"
 	"strings"
+
+	"github.com/rafelychandra/go-qris/crc16"
 )
 
 func (p *Payload) Validate() error {
