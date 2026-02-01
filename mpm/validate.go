@@ -6,8 +6,6 @@ import (
 	"reflect"
 	"strconv"
 	"strings"
-
-	"bitbucket.org/Amartha/go-payment-lib/payment-api/helper"
 )
 
 func (p *Payload) Validate() error {
@@ -52,18 +50,14 @@ func (p *Payload) Validate() error {
 
 func (mai *MerchantAccountInformation) Validate() error {
 	if mai.GlobalUniqueIdentifier != "" {
-		if !helper.ReverseDomain(mai.GlobalUniqueIdentifier) {
-			return fmt.Errorf("invalid global unique identifier, expected reverse domain")
-		}
+
 	}
 	return nil
 }
 
 func (maid *MerchantAccountInformationDomesticCentralRepository) Validate() error {
 	if maid.GlobalUniqueIdentifier != "" {
-		if !helper.ReverseDomain(maid.GlobalUniqueIdentifier) {
-			return fmt.Errorf("invalid global unique identifier tag 51, expected reverse domain")
-		}
+
 	}
 	return nil
 }
